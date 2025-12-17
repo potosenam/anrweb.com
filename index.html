@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANR Media - Solusi Digital Profesional</title>
+    <title>Java Basic Studio - Solusi Digital Profesional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00d9ff;
-            --secondary: #9d4edd;
+            --primary: #ff6b00;
+            --secondary: #2a9d8f;
             --dark: #0a0a1a;
             --darker: #050510;
             --light: #f0f8ff;
             --gray: #a0a0c0;
             --success: #00ff9d;
+            --price: #ffd166;
         }
         
         * {
@@ -100,7 +101,7 @@
             background-color: rgba(10, 10, 26, 0.9);
             backdrop-filter: blur(10px);
             padding: 20px 0;
-            border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.1);
             transition: all 0.3s ease;
         }
         
@@ -122,9 +123,24 @@
         }
         
         .logo-icon {
-            color: var(--primary);
-            font-size: 2rem;
-            text-shadow: 0 0 10px var(--primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 3px;
+            transition: all 0.3s;
+        }
+        
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
         }
         
         .logo-text {
@@ -254,7 +270,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 50px rgba(0, 217, 255, 0.5);
+            box-shadow: 0 0 50px rgba(255, 107, 0, 0.5);
             animation: pulse 3s infinite;
             position: relative;
             overflow: hidden;
@@ -301,13 +317,13 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
             margin-top: 20px;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
         }
         
         .cta-button::after {
@@ -375,13 +391,13 @@
         
         @keyframes pulse {
             0% {
-                box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.5);
+                box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.5);
             }
             70% {
-                box-shadow: 0 0 0 20px rgba(0, 217, 255, 0);
+                box-shadow: 0 0 0 20px rgba(255, 107, 0, 0);
             }
             100% {
-                box-shadow: 0 0 0 0 rgba(0, 217, 255, 0);
+                box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
             }
         }
         
@@ -393,7 +409,7 @@
             margin-top: 40px;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(255, 107, 0, 0.1);
         }
         
         .section-bg::before {
@@ -418,22 +434,63 @@
             background: rgba(20, 20, 40, 0.7);
             border-radius: 15px;
             padding: 30px;
-            border: 1px solid rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(255, 107, 0, 0.1);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.2);
         }
         
         .service-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 20px;
+        }
+        
+        /* Harga */
+        .price-tag {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 15px 0;
+            display: inline-block;
+            box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3);
+            align-self: flex-start;
+        }
+        
+        /* Tombol WA di Kartu Layanan */
+        .service-wa-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: auto;
+            transition: all 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .service-wa-button:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
         
         /* Features */
@@ -471,7 +528,7 @@
             background: rgba(20, 20, 40, 0.7);
             border-radius: 15px;
             padding: 30px;
-            border: 1px solid rgba(157, 78, 221, 0.2);
+            border: 1px solid rgba(42, 157, 143, 0.2);
         }
         
         /* Contact */
@@ -535,11 +592,35 @@
             }
         }
         
+        /* Tombol WA Tambahan di Bagian Strategis */
+        .strategic-wa-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .strategic-wa-button:hover {
+            background-color: #1da851;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+        }
+        
         /* Footer */
         footer {
             background-color: var(--darker);
             padding: 60px 0 30px;
-            border-top: 1px solid rgba(0, 217, 255, 0.1);
+            border-top: 1px solid rgba(255, 107, 0, 0.1);
         }
         
         .footer-content {
@@ -661,6 +742,11 @@
                 width: 180px;
                 height: 180px;
             }
+            
+            .price-tag {
+                font-size: 1.1rem;
+                padding: 6px 12px;
+            }
         }
         
         /* Animations */
@@ -678,11 +764,50 @@
         .glow {
             text-shadow: 0 0 10px var(--primary);
         }
+        
+        /* Harga Detail */
+        .price-detail {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid var(--price);
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .price-label {
+            color: var(--gray);
+        }
+        
+        .price-value {
+            color: var(--price);
+            font-weight: 600;
+        }
+        
+        .price-note {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-style: italic;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/6285143884484?text=Halo%20ANR%20Media,%20saya%20ingin%20konsultasi%20tentang%20pembuatan%20website" class="whatsapp-button" target="_blank" id="main-wa-button">
+    <!-- WhatsApp Button Utama -->
+    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20ingin%20konsultasi%20tentang%20layanan%20digital%20Anda" class="whatsapp-button" target="_blank" id="main-wa-button">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -691,8 +816,8 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <div class="logo-icon"><i class="fas fa-code"></i></div>
-                    <div class="logo-text">ANR MEDIA</div>
+                    <div class="logo-icon"><img src="img/logo jbs.jpg" alt="Java Basic Studio Logo"></div>
+                    <div class="logo-text">JBS</div>
                 </div>
                 
                 <!-- Navigasi Desktop -->
@@ -734,17 +859,24 @@
         
         <div class="container">
             <div class="hero-content fade-in">
-                <h1>ANR MEDIA</h1>
-                <h2>Alpha Node Reality</h2>
-                <p>Penyedia jasa pembuatan website profesional yang berkomitmen menghadirkan solusi digital berkualitas tinggi untuk berbagai kebutuhan bisnis dan organisasi.</p>
-                <p>Dengan keahlian dalam teknologi web modern dan pemahaman mendalam tentang kebutuhan klien, kami hadir sebagai mitra terpercaya dalam membangun kehadiran online yang kuat dan efektif.</p>
-                <a href="#contact" class="cta-button">Konsultasi Gratis</a>
+                <h1>JAVA BASIC STUDIO</h1>
+                <h2>Solusi Digital Profesional</h2>
+                <p>Penyedia jasa pembuatan website profesional dan jasa video drone yang berkomitmen menghadirkan solusi digital berkualitas tinggi untuk berbagai kebutuhan bisnis dan organisasi.</p>
+                <p>Dengan keahlian dalam teknologi web modern, videografi drone, dan pemahaman mendalam tentang kebutuhan klien, kami hadir sebagai mitra terpercaya dalam membangun kehadiran online yang kuat dan efektif.</p>
+                
+                <!-- Tombol WA Strategis di Hero -->
+                <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20konsultasi" class="strategic-wa-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Konsultasi Gratis via WhatsApp
+                </a>
+                
+                <a href="#services" class="cta-button">Lihat Layanan Kami</a>
             </div>
             
             <!-- Logo Bulat di Sebelah Kanan -->
             <div class="hero-logo fade-in">
                 <div class="logo-circle">
-                    <img src="img/logo.png" alt="ANR Media Logo" class="logo-img">
+                    <!-- Ganti dengan logo JBS format PNG -->
+                    <img src="img/logo jbs.jpg" alt="Java Basic Studio Logo" class="logo-img">
                 </div>
             </div>
         </div>
@@ -755,9 +887,16 @@
         <div class="container">
             <h2 class="fade-in">Profil Perusahaan</h2>
             <div class="section-bg fade-in">
-                <p><strong>ANR Media (Alpha Node Reality)</strong> adalah penyedia jasa pembuatan website profesional yang berkomitmen menghadirkan solusi digital berkualitas tinggi untuk berbagai kebutuhan bisnis dan organisasi.</p>
-                <p>Dengan keahlian dalam teknologi web modern dan pemahaman mendalam tentang kebutuhan klien, kami hadir sebagai mitra terpercaya dalam membangun kehadiran online yang kuat dan efektif.</p>
+                <p><strong>Java Basic Studio (JBS)</strong> adalah penyedia jasa pembuatan website profesional dan jasa video drone yang berkomitmen menghadirkan solusi digital berkualitas tinggi untuk berbagai kebutuhan bisnis dan organisasi.</p>
+                <p>Dengan keahlian dalam teknologi web modern, videografi drone, dan pemahaman mendalam tentang kebutuhan klien, kami hadir sebagai mitra terpercaya dalam membangun kehadiran online yang kuat dan efektif.</p>
                 <p>Kami percaya bahwa setiap bisnis memerlukan pendekatan unik dalam menyajikan identitas digitalnya, oleh karena itu kami menawarkan solusi yang disesuaikan dengan kebutuhan spesifik Anda.</p>
+                
+                <!-- Tombol WA Strategis di About -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20perusahaan%20Anda" class="strategic-wa-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Tanya Lebih Lanjut
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -767,35 +906,186 @@
         <div class="container">
             <h2 class="fade-in">Layanan Kami</h2>
             <div class="services-grid">
+                <!-- Website Company Profile -->
                 <div class="service-card fade-in">
                     <div class="service-icon"><i class="fas fa-building"></i></div>
                     <h3>Website Company Profile</h3>
                     <p>Membangun identitas digital perusahaan yang profesional dan menarik untuk meningkatkan kredibilitas bisnis Anda di mata klien.</p>
+                    
+                    <div class="price-tag">Mulai dari Rp 500.000</div>
+                    
+                    <div class="price-detail">
+                        <div class="price-item">
+                            <span class="price-label">Paket Basic</span>
+                            <span class="price-value">Rp 500.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Paket Professional</span>
+                            <span class="price-value">Rp 700.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Paket Enterprise</span>
+                            <span class="price-value">Rp 900.000</span>
+                        </div>
+                        <p class="price-note">Harga dapat berubah sesuai kompleksitas dan fitur tambahan</p>
+                    </div>
+                    
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20tertarik%20dengan%20layanan%20Website%20Company%20Profile" class="service-wa-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                    </a>
                 </div>
                 
+                <!-- Website E-Commerce -->
                 <div class="service-card fade-in">
                     <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
                     <h3>Website E-Commerce</h3>
                     <p>Solusi toko online yang lengkap dengan sistem pembayaran, manajemen produk, dan dashboard admin untuk mengelola penjualan.</p>
+                    
+                    <div class="price-tag">Mulai dari Rp 500.000</div>
+                    
+                    <div class="price-detail">
+                        <div class="price-item">
+                            <span class="price-label">Paket Starter</span>
+                            <span class="price-value">Rp 500.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Paket Business</span>
+                            <span class="price-value">Rp 700.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Paket Premium</span>
+                            <span class="price-value">Rp 900.000</span>
+                        </div>
+                        <p class="price-note">Termasuk integrasi payment gateway dan sistem inventory</p>
+                    </div>
+                    
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20tertarik%20dengan%20layanan%20Website%20E-Commerce" class="service-wa-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                    </a>
                 </div>
                 
+                <!-- Jasa Video Drone -->
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-video"></i></div>
+                    <h3>Jasa Video Drone</h3>
+                    <p>Produksi video aerial profesional untuk properti, acara, dokumentasi, dan konten marketing dengan kualitas cinematic.</p>
+                    
+                    <div class="price-tag">Mulai dari Rp 350.000/30 menit terbang</div>
+                    
+                    <div class="price-detail">
+                        <div class="price-item">
+                            <span class="price-label">Paket Dokumentasi</span>
+                            <span class="price-value">Rp 350.000/ 1x take off</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Paket Profesional</span>
+                            <span class="price-value">Rp 450.000/ 1x take off/ full video</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Paket Cinematic</span>
+                            <span class="price-value">Rp 500.000 / 1x take off/ cinematic editing</span>
+                        </div>
+                        <p class="price-note">1x take off = 25 menit, Harga termasuk shooting dan basic editing</p>
+                    </div>
+                    
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20tertarik%20dengan%20layanan%20Video%20Drone" class="service-wa-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                    </a>
+                </div>
+                
+                <!-- Website Portfolio -->
                 <div class="service-card fade-in">
                     <div class="service-icon"><i class="fas fa-briefcase"></i></div>
                     <h3>Website Portfolio</h3>
                     <p>Showcase karya dan proyek untuk individu maupun bisnis kreatif dengan desain yang menarik dan mudah dinavigasi.</p>
+                    
+                    <div class="price-tag">Mulai dari Rp 500.000</div>
+                    
+                    <div class="price-detail">
+                        <div class="price-item">
+                            <span class="price-label">Paket Personal</span>
+                            <span class="price-value">Rp 500.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Paket Creative</span>
+                            <span class="price-value">Rp 700.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Paket Agency</span>
+                            <span class="price-value">Rp 900.000</span>
+                        </div>
+                        <p class="price-note">Custom design sesuai kebutuhan personalisasi</p>
+                    </div>
+                    
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20tertarik%20dengan%20layanan%20Website%20Portfolio" class="service-wa-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                    </a>
                 </div>
                 
+                <!-- Website Landing Page -->
                 <div class="service-card fade-in">
                     <div class="service-icon"><i class="fas fa-rocket"></i></div>
                     <h3>Website Landing Page</h3>
                     <p>Halaman promosi yang dioptimalkan untuk konversi tinggi, dirancang untuk kampanye pemasaran yang efektif.</p>
+                    
+                    <div class="price-tag">Mulai dari Rp 500.000</div>
+                    
+                    <div class="price-detail">
+                        <div class="price-item">
+                            <span class="price-label">Landing Page Basic</span>
+                            <span class="price-value">Rp 500.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Landing Page Pro</span>
+                            <span class="price-value">Rp 700.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Multi Landing Pages</span>
+                            <span class="price-value">Rp 900.000</span>
+                        </div>
+                        <p class="price-note">Optimasi konversi dan integrasi analytics</p>
+                    </div>
+                    
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20tertarik%20dengan%20layanan%20Landing%20Page" class="service-wa-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                    </a>
                 </div>
                 
+                <!-- Custom Web Application -->
                 <div class="service-card fade-in">
                     <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Custom Web Application</h3>
-                    <p>Pengembangan aplikasi web sesuai kebutuhan spesifik bisnis Anda dengan fungsionalitas yang disesuaikan.</p>
+                    <h3>Custom Web Sekolah</h3>
+                    <p>Pengembangan aplikasi web sesuai kebutuhan spesifik spesifikasi dengan fungsionalitas yang disesuaikan untuk pendaftaran siswa.</p>
+                    
+                    <div class="price-tag">Mulai dari Rp 350.000</div>
+                    
+                    <div class="price-detail">
+                        <div class="price-item">
+                            <span class="price-label">Portofolio sekolah</span>
+                            <span class="price-value">Rp 350.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Portofolio + data raport</span>
+                            <span class="price-value">Rp 400.000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Maintenance/tahun</span>
+                            <span class="price-value">15% dari harga</span>
+                        </div>
+                        <p class="price-note">Harga berdasarkan kompleksitas dan scope Website</p>
+                    </div>
+                    
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20tertarik%20dengan%20layanan%20Custom%20Web%20Application" class="service-wa-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                    </a>
                 </div>
+            </div>
+            
+            <!-- Tombol WA Strategis di Bawah Layanan -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20ingin%20konsultasi%20tentang%20harga%20dan%20paket%20layanan%20Anda" class="strategic-wa-button" target="_blank" style="font-size: 1.2rem; padding: 15px 30px;">
+                    <i class="fab fa-whatsapp"></i> Dapatkan Penawaran Harga Terbaik
+                </a>
             </div>
         </div>
     </section>
@@ -803,7 +1093,7 @@
     <!-- Features Section -->
     <section id="features">
         <div class="container">
-            <h2 class="fade-in">Keunggulan ANR Media</h2>
+            <h2 class="fade-in">Keunggulan Java Basic Studio</h2>
             <div class="section-bg fade-in">
                 <ul class="features-list">
                     <li>
@@ -818,6 +1108,13 @@
                         <div>
                             <h3>SEO Friendly</h3>
                             <p>Dioptimalkan untuk mesin pencari agar mudah ditemukan dan meningkatkan visibilitas online bisnis Anda.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                        <div>
+                            <h3>Video Drone Berkualitas</h3>
+                            <p>Produksi video aerial dengan peralatan profesional dan teknik cinematography untuk hasil yang memukau.</p>
                         </div>
                     </li>
                     <li>
@@ -842,6 +1139,13 @@
                         </div>
                     </li>
                 </ul>
+                
+                <!-- Tombol WA Strategis di Features -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20keunggulan%20layanan%20Anda" class="strategic-wa-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Tanya Detail Keunggulan
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -853,16 +1157,16 @@
             <div class="vision-mission">
                 <div class="vision-box fade-in">
                     <h3><i class="fas fa-eye"></i> Visi</h3>
-                    <p>Menjadi penyedia solusi digital terdepan yang memberdayakan bisnis untuk tumbuh dan berkembang di era digital.</p>
+                    <p>Menjadi penyedia solusi digital terdepan yang memberdayakan bisnis untuk tumbuh dan berkembang di era digital melalui website profesional dan konten visual berkualitas tinggi.</p>
                 </div>
                 
                 <div class="mission-box fade-in">
                     <h3><i class="fas fa-bullseye"></i> Misi</h3>
                     <ul class="features-list">
-                        <li>Menghadirkan website profesional berkualitas tinggi dengan harga terjangkau</li>
-                        <li>Memberikan layanan pelanggan terbaik dengan pendekatan personal</li>
-                        <li>Terus berinovasi dalam teknologi web untuk solusi yang lebih baik</li>
-                        <li>Membangun kemitraan jangka panjang dengan klien</li>
+                        <li>Menghadirkan website dan video drone profesional berkualitas tinggi dengan harga terjangkau</li>
+                        <li>Memberikan layanan pelanggan terbaik dengan pendekatan personal dan solusi yang tepat</li>
+                        <li>Terus berinovasi dalam teknologi web dan videografi untuk solusi yang lebih baik</li>
+                        <li>Membangun kemitraan jangka panjang dengan klien melalui hasil yang memuaskan</li>
                     </ul>
                 </div>
             </div>
@@ -874,7 +1178,7 @@
         <div class="container">
             <h2 class="fade-in">Kontak Kami</h2>
             <div class="section-bg fade-in">
-                <p>Mari wujudkan website impian Anda bersama ANR Media. Hubungi kami untuk konsultasi gratis dan penawaran terbaik!</p>
+                <p>Mari wujudkan website impian Anda bersama Java Basic Studio. Hubungi kami untuk konsultasi gratis dan penawaran terbaik!</p>
                 
                 <div class="contact-info">
                     <div class="contact-item">
@@ -892,6 +1196,11 @@
                         <div>
                             <h3>WhatsApp</h3>
                             <p>085143884484</p>
+                            <p style="margin-top: 10px;">
+                                <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20ingin%20konsultasi" class="strategic-wa-button" target="_blank" style="padding: 8px 15px; font-size: 0.9rem;">
+                                    <i class="fab fa-whatsapp"></i> Chat Sekarang
+                                </a>
+                            </p>
                         </div>
                     </div>
                     
@@ -907,6 +1216,11 @@
                 
                 <div class="text-center" style="margin-top: 40px; text-align: center;">
                     <a href="#home" class="cta-button">Kembali ke Beranda</a>
+                    
+                    <!-- Tombol WA Strategis di Kontak -->
+                    <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20ingin%20konsultasi%20tentang%20layanan%20Anda" class="strategic-wa-button" target="_blank" style="margin-left: 20px;">
+                        <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
@@ -917,9 +1231,16 @@
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <div class="footer-logo">ANR MEDIA</div>
-                    <p>Alpha Node Reality - Solusi digital profesional untuk bisnis Anda.</p>
-                    <p>Membangun kehadiran online yang kuat dan efektif dengan teknologi web modern.</p>
+                    <div class="footer-logo">JAVA BASIC STUDIO</div>
+                    <p>Solusi digital profesional untuk bisnis Anda.</p>
+                    <p>Membangun kehadiran online yang kuat dan efektif dengan website profesional dan jasa video drone berkualitas.</p>
+                    
+                    <!-- Tombol WA di Footer -->
+                    <div style="margin-top: 20px;">
+                        <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20dari%20website%20ingin%20konsultasi" class="strategic-wa-button" target="_blank" style="padding: 10px 20px;">
+                            <i class="fab fa-whatsapp"></i> Konsultasi Sekarang
+                        </a>
+                    </div>
                 </div>
                 
                 <div>
@@ -939,11 +1260,17 @@
                     <p><i class="fas fa-map-marker-alt"></i> Kediri, Jawa Timur</p>
                     <p><i class="fab fa-whatsapp"></i> 085143884484</p>
                     <p><i class="fas fa-clock"></i> Senin - Sabtu, 08.00 - 17.00 WIB</p>
+                    
+                    <div style="margin-top: 15px;">
+                        <a href="https://wa.me/6285143884484?text=Halo%20Java%20Basic%20Studio,%20saya%20ingin%20tanya%20harga" class="strategic-wa-button" target="_blank" style="padding: 8px 15px; font-size: 0.9rem;">
+                            <i class="fab fa-whatsapp"></i> Tanya Harga
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 ANR Media (Alpha Node Reality). All rights reserved.</p>
+                <p>&copy; 2023 Java Basic Studio. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -983,15 +1310,17 @@
             
             // WhatsApp button functionality
             const whatsappNumber = "6285143884484";
-            const whatsappMessage = "Halo ANR Media, saya ingin konsultasi tentang pembuatan website";
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            const defaultMessage = "Halo Java Basic Studio, saya ingin konsultasi tentang layanan digital Anda";
+            
+            // Fungsi untuk membuat URL WhatsApp
+            function createWhatsAppUrl(message) {
+                return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            }
             
             // Set tombol utama WhatsApp
             const mainWaButton = document.getElementById('main-wa-button');
             if (mainWaButton) {
-                mainWaButton.addEventListener('click', function() {
-                    window.open(whatsappUrl, '_blank');
-                });
+                mainWaButton.href = createWhatsAppUrl(defaultMessage);
             }
             
             // Smooth scroll untuk anchor links
@@ -1055,7 +1384,7 @@
                 const duration = 10 + Math.random() * 15;
                 
                 // Random color
-                const colors = ['#00d9ff', '#9d4edd', '#00ff9d', '#ff6b6b'];
+                const colors = ['#ff6b00', '#2a9d8f', '#00ff9d', '#ffd166'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 
                 element.style.left = `${left}%`;
@@ -1156,6 +1485,28 @@
             
             // Inisialisasi background pertama
             backgrounds[0].classList.add('active');
+            
+            // Tambahkan event listener untuk tombol WA di kartu layanan
+            document.querySelectorAll('.service-wa-button, .strategic-wa-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Untuk link eksternal, biarkan default behavior
+                    if (this.getAttribute('href').includes('wa.me')) {
+                        return;
+                    }
+                    
+                    // Untuk internal links, cegah default dan scroll
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
